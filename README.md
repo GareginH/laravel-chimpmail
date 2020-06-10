@@ -7,7 +7,7 @@
 - Fill in mailchimp info, you need api key and list id
 - run in console
     - php artisan migrate --seed 
-    - php artisan schedule:run
+    - php artisan schedule:run (Need to setup crontab entry)
 ```
 Additional commands:
 * subs:add -> adds all subscribers to mailchimp audience
