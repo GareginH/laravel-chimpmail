@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-class Subscribers extends Seeder
+use Illuminate\Support\Str;
+
+class SubscribersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +19,7 @@ class Subscribers extends Seeder
             DB::table('subscribers')->insert([
                 'name'=>$faker->firstName,
                 'lastname'=>$faker->lastName,
-                'email'=>$faker->safeEmail,
+                'email'=>Str::random(5)."@gmail.com",
                 'subscribed'=>false
             ]);
         }
