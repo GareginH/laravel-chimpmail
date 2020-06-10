@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class SubscriberController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -35,7 +44,19 @@ class SubscriberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name'=>'required|max:20|string',
+            'lastname'=>'required|max:30|string',
+            'email'=>'required|max:50|email|unique:subscribers,email',
+        ]);
+        Subscriber::create([
+            'name'=>$request->name,
+            'lastname'=>$request->lastname,
+            'email'=>$request->email,
+            'subscribed'=>false,
+        ]);
+
+        return redirect('home');
     }
 
     /**
