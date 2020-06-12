@@ -13,7 +13,7 @@ class RefreshSubs extends Command
      *
      * @var string
      */
-    protected $signature = 'subs:refresh';
+    protected $signature = 'subscribers:refresh';
 
     /**
      * The console command description.

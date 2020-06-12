@@ -10,6 +10,6 @@
     - php artisan schedule:run (Need to setup crontab entry)
 ```
 Additional commands:
-* subs:add -> adds all subscribers to mailchimp audience
-* subs:refresh -> checks mailchimp audience and updates our subscribers status accordingly
+* subscribers:add -> adds all subscribers to mailchimp audience
+* subscribers:refresh -> checks mailchimp audience and updates our subscribers status accordingly
  

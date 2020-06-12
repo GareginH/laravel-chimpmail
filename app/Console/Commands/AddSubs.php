@@ -13,7 +13,7 @@ class AddSubs extends Command
      *
      * @var string
      */
-    protected $signature = 'subs:add';
+    protected $signature = 'subscribers:add';
 
     /**
      * The console command description.
