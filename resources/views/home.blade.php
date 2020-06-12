@@ -24,7 +24,7 @@
                                                 <label for="name" class="col-form-label">Name</label>
                                                 <input id="name"
                                                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                                       name="name" value="" required>
+                                                       name="name" value="{{old('name')}}" required>
                                                 @if ($errors->has('name'))
                                                     <span
                                                         class="invalid-feedback"><strong>{{ $errors->first('name') }}</strong></span>
@@ -34,7 +34,7 @@
                                                 <label for="lastname" class="col-form-label">Lastname</label>
                                                 <input id="lastname"
                                                        class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
-                                                       name="lastname" value="" required>
+                                                       name="lastname" value="{{old('lastname')}}" required>
                                                 @if ($errors->has('lastname'))
                                                     <span
                                                         class="invalid-feedback"><strong>{{ $errors->first('lastname') }}</strong></span>
@@ -44,7 +44,7 @@
                                                 <label for="email" class="col-form-label">Email</label>
                                                 <input id="email"
                                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                                       name="email" value="" required>
+                                                       name="email" value="{{old('email')}}" required>
                                                 @if ($errors->has('email'))
                                                     <span
                                                         class="invalid-feedback"><strong>{{ $errors->first('email') }}</strong></span>

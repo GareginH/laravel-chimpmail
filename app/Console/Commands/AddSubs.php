@@ -43,14 +43,14 @@ class AddSubs extends Command
         $apiKey = env('MC_KEY');
         $mc = new Mailchimp($apiKey);
         $listId = env('MC_LIST_ID');
-        echo "Adding subscribers to mailchimp, please wait...\n";
+        $this->info("Adding subscribers to mailchimp, please wait...");
         foreach (Subscriber::all() as $subscriber){
             if(!$mc->check($listId, $subscriber->email)){
                 $mc->subscribe($listId, $subscriber->email,['FNAME'=>$subscriber->name,'LNAME'=>$subscriber->lastname], false); // Add subscriber to mailchimp list
                 //$subscriber->update(['subscribed'=>true]); // Update subscribers status right away
             }
         }
-        echo "Done\n";
+        $this->info("Done");
         return 1;
     }
 }

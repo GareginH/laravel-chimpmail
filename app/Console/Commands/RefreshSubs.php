@@ -42,7 +42,7 @@ class RefreshSubs extends Command
         $apiKey = env('MC_KEY');
         $mc = new Mailchimp($apiKey);
         $listId = env('MC_LIST_ID');
-        echo "Checking mailchimp and refreshing our subscriber DB, please wait...\n";
+        $this->info("Checking mailchimp and refreshing our subscriber DB, please wait...");
         foreach (Subscriber::all() as $subscriber){
             if($mc->check($listId, $subscriber->email)){ //If email is subscribed to our mailchimp, we set subscriber status to true
                 $subscriber->update(['subscribed'=>true]);//set subscriber status true
@@ -51,7 +51,7 @@ class RefreshSubs extends Command
                 $subscriber->update(['subscribed'=>false]); //set subscriber status false
             }
         }
-        echo "Done\n";
+        $this->info("Done");
         return 1;
     }
 }
